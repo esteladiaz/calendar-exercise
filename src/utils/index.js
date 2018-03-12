@@ -36,11 +36,18 @@ export const filterEventsByHour = (events, hour) => (
  * @returns {string} The formatted date
  */
 export const getDisplayDate = (timestamp) => {
-    let date = new Date(timestamp);
+  // TODO: Format the date like: "Tuesday, April 11, 2017"
 
-    // TODO: Format the date like: "Tuesday, April 11, 2017"
+// Circling back with more time
+    let date = new Date();
+    let weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()];
+    let month = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
-    return date.toString();
+    let d = weekday[date.getDate()];
+    let m = month[date.getMonth() + 1];
+    let y = date.getFullYear();
+
+    return (date.toDateString();
 };
 
 /**
